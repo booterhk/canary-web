@@ -2,3 +2,8 @@ body{
   background-color: green;
   color: #000;
 }
+#img{
+  background-image: url('./image/coast.jpg');
+  width: 1600px;
+  height: 1000px;
+}
