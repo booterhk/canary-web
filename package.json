@@ -2,7 +2,7 @@
   "name": "canary-web",
   "version": "1.0.0",
   "description": "",
-  "main": ".index.js",
+  "private": true,
   "scripts": {
     "build-prd": "webpack --mode=production --config webpack.config.js",
     "build": "webpack --mode=development --config=config/webpack.base.js",
@@ -20,7 +20,9 @@
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "clean-webpack-plugin": "^2.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -33,5 +35,13 @@
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mobx": "^5.9.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
   }
 }

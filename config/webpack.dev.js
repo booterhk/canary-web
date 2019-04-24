@@ -1,5 +1,6 @@
 const merge = require('webpack-merge')
 const {resolve} = require('path');
+const webpack = require('webpack')
 const baseConfig = require('./webpack.base')
 const uglify = require('uglifyjs-webpack-plugin');
 module.exports  = merge(baseConfig, {
@@ -14,6 +15,7 @@ module.exports  = merge(baseConfig, {
       hot: true,
     },
     plugins: [
-      new uglify()
+      new uglify(),
+      new webpack.HotModuleReplacementPlugin()
     ]
   })

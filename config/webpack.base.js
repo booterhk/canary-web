@@ -1,14 +1,11 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const extractTextPlugin = require('extract-text-webpack-plugin')
-
-const website = {
-  publicPath: 'http://localhost:8080'
-}
+// 清除文件
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
-    main: './src/main.js',
-    main2: './src/main2.js'
+    main: './src/index.js',
   },
   output: {
     path: resolve(__dirname, '../dist'),
@@ -34,13 +31,21 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jsx|js)$/,
+        use: {
+          loader: 'babel-loader'
+        },
+        exclude: /node_modules/
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      title: `公寓运营平台`,
+      template: './src/index.ejs',
+      title: `webpack测试`,
       hash: true,
       minify: {
         removeAttributeQuotes: true
