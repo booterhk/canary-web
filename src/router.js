@@ -11,11 +11,15 @@ import { Router, Switch, Route } from 'react-router-dom';
 // const history = syncHistoryWithStore(hashHistory, routing);
 
 export default class extends Component {
-
+  
+  
   render () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Looks like we are in development mode!');
+    }
     return (
       <div>
-        <h2>程序出错了.ss</h2>
+        <h2>程序出错了</h2>
       </div>
     );
   }

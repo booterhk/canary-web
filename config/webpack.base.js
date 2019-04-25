@@ -9,8 +9,20 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, '../dist'),
-    filename: '[name].js',
+    filename: '[name].[hash].js',
     publicPath: '/'
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
   },
   module: {
     rules: [

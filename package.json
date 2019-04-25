@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build-prd": "webpack --mode=production --config webpack.config.js",
+    "build-prd": "webpack --mode=production --config=config/webpack.prd.js",
     "build": "webpack --mode=development --config=config/webpack.base.js",
     "build-server": "webpack-dev-server --config=config/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
